@@ -3,32 +3,44 @@ package application;
 
 import entities.Client;
 
+import java.util.*;
+
 public class Program {
     public static void main(String[] args) {
 
 
-       /*
-       String a = "Maria";
-       String b = "Alex";
+        /*
+        Set<String> set = new LinkedHashSet<>();
 
 
-       System.out.println(a.hashCode());
-       System.out.println(b.hashCode());
+        set.add("TV");
+        set.add("Notebook");
+        set.add("Tablet");
+
+        set.removeIf(x -> x.charAt(0) == 'T');
+
+        for (String p : set) {
+            System.out.println(p);
+        }
         */
 
+        Set<Integer> a = new TreeSet<>(Arrays.asList(0, 2, 4, 5, 6, 8, 10));
+        Set<Integer> b = new TreeSet<>(Arrays.asList(5, 6, 7, 8, 9, 10));
 
-        Client c1 = new Client("Maria", "maria@gmail.com");
-        Client c2 = new Client("Maria", "maria@gmail.com");
+        //union
+        Set<Integer> c = new TreeSet<>(a);
+        c.addAll(b);
+        System.out.println(c);
 
-        String s1 = "Test";
-        String s2 = "Test";
+        //intersection
+        Set<Integer> d = new TreeSet<>(a);
+        d.retainAll(b);
+        System.out.println(d);
 
-        System.out.println(c1.hashCode());
-        System.out.println(c2.hashCode());
-        System.out.println(c1.equals(c2));
-
-        System.out.println(c1 == c2);
-        System.out.println(s1 == s2);
+        //difference
+        Set<Integer> e = new TreeSet<>(a);
+        e.removeAll(b);
+        System.out.println(e);
 
 
     }
