@@ -34,7 +34,7 @@ public class Product implements Comparable<Product> {
 
     @Override
     public int compareTo(Product other) {
-        return this.price.compareTo(other.getPrice());
+        return name.toUpperCase().compareTo(other.getName().toUpperCase());
     }
 
     @Override
@@ -49,4 +49,6 @@ public class Product implements Comparable<Product> {
     public int hashCode() {
         return Objects.hash(getName(), getPrice());
     }
+
+
 }
